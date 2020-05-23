@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <title>알고리즘</title>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css" type="text/css">
+    <style>
+        body {
+            font-size: 20px;
+            line-height: 1.4;
+        }
+
+        #array {
+            padding: 20px;
+        }
+
+        button {
+            font-size: 20px;
+            display: block;
+            border: 1px solid #000;
+            margin-bottom: 20px;
+        }
+
+        .wrap {
+            margin-top: 50px;
+            display: flex;
+            align-items: center;
+            flex-wrap: wrap;
+
+        }
+
+        .wrap button {
+            flex: 0 0 20%;
+            height: auto;
+            padding: 10px;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="array"></div>
+    <hr>
+    <div class="wrap">
+        <button id="array-push" type="button">array push()</button>
+        <button id="array-pop" type="button">array pop()</button>
+        <button id="array-shift" type="button">array shift()</button>
+        <button id="array-unshift" type="button">array unshift()</button>
+        <button id="array-indexof" type="button">array indexof()</button>
+        <button id="array-splice" type="button">array splice()</button>
+        <button id="array-slice" type="button">array slice()</button>
+    </div>
+
+    <script>
+        const arrayDefault = ["화요일", "수요일", "목요일", "금요일", "토요일"];
+
+        const btnArrayPush = document.querySelector('#array-push');
+        const btnArrayPop = document.querySelector('#array-pop');
+        const btnArrayShift = document.querySelector('#array-shift');
+        const btnArrayUnshift = document.querySelector('#array-unshift');
+        const btnArrayIndexof = document.querySelector('#array-indexof');
+        const btnArraySplice = document.querySelector('#array-splice');
+        const btnArraySlice = document.querySelector('#array-slice');
+        // const date = ["월", "화", "수", "목", "금", "토"];
+        let str = '';
+
+        function printArrayDefault() {
+            for (i = 0; i < arrayDefault.length; i++) {
+                if (i == arrayDefault.length - 1) {
+                    str += arrayDefault[i];
+                }
+                else {
+                    str += arrayDefault[i] + ', ';
+                }
+            };
+        }
+
+        printArrayDefault();
+
+        document.querySelector('#array').innerHTML = str;
+
+
+        function showArrayDefault() {
+            console.log('arrayDefault:(' + arrayDefault.length + ')    ' + arrayDefault)
+        }
+
+
+        //array Push: 마지막 index에 값 추가
+        function arrayPush() {
+            arrayDefault.push('일요일');
+            str = '';
+
+            printArrayDefault();
+
+            document.querySelector('#array').innerHTML = str;
+            showArrayDefault();
+        }
+
+        btnArrayPush.addEventListener('click', arrayPush);
+
+
+        //array pop: 마지막 index의 값을 삭제
+        function arrayPop() {
+            arrayDefault.pop();
+            str = '';
+
+            printArrayDefault();
+
+            document.querySelector('#array').innerHTML = str;
+            showArrayDefault();
+        }
+        btnArrayPop.addEventListener('click', arrayPop);
+
+        //array shift: 마지막 값을 삭제 후, 그 값을 반환
+        function arrayshift() {
+            var shiftedArray = arrayDefault.shift();
+            str = '';
+
+            printArrayDefault();
+
+            document.querySelector('#array').innerHTML = str + ' <br>삭제된 마지막 값:' + shiftedArray;
+            showArrayDefault();
+        }
+        btnArrayShift.addEventListener('click', arrayshift);
+
+
+        //array unshift: 새 값을 앞에 추가하고, 그 값을 반환
+        function arrayUnshift() {
+            var unshiftedArray = arrayDefault.unshift("월요일");
+            str = '';
+
+            printArrayDefault();
+
+            document.querySelector('#array').innerHTML = str + ' <br>추가된 첫 값을 포함한 길이:' + unshiftedArray;
+            showArrayDefault();
+        }
+        btnArrayUnshift.addEventListener('click', arrayUnshift);
+
+        //array indexof: 배열에서 특정 요소가 있는 위치를 찾기  
+        function arrayIndexof() {
+            var indexofResult = arrayDefault.indexOf("목요일");
+            str = '';
+
+            printArrayDefault();
+
+            document.querySelector('#array').innerHTML = str + ' <br>목요일이 있는 배열의 index번호:' + indexofResult;
+            showArrayDefault();
+        }
+        btnArrayIndexof.addEventListener('click', arrayIndexof);
+
+        //array splice: 기존 배열 요소를 추가/삭제/변경 
+        function arraysplice() {
+            //2번째의 값을 변경 
+            var spliceResult = arrayDefault.splice(1, 1, '변경했습니다');
+            str = '';
+
+            printArrayDefault();
+
+            document.querySelector('#array').innerHTML = str;
+            showArrayDefault();
+        }
+        btnArraySplice.addEventListener('click', arraysplice);
+
+
+    </script>
+</body>
+
+</html>
