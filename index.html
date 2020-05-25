@@ -162,6 +162,19 @@
         btnArraySplice.addEventListener('click', arraysplice);
 
 
+        //array sㅣice: 기존 배열 요소를 시작~끝 범위 복사, 새로운 배열로. 
+        function arrayslice() {
+            //2~4번째의 값을 변경 
+            var sliceResult = [];
+            sliceResult = arrayDefault.slice(2, 4);
+
+
+            printArrayDefault();
+
+            document.querySelector('#array').innerHTML = `slice한 배열은 ${sliceResult}`;
+            //console.log(sliceResult)
+        }
+        btnArraySlice.addEventListener('click', arrayslice);
     </script>
 </body>
 
