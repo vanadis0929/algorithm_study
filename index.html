@@ -49,6 +49,7 @@
         <button id="array-indexof" type="button">array indexof()</button>
         <button id="array-splice" type="button">array splice()</button>
         <button id="array-slice" type="button">array slice()</button>
+        <button id="array-indexOf" type="button">array indexof()</button>
     </div>
 
     <script>
@@ -61,6 +62,7 @@
         const btnArrayIndexof = document.querySelector('#array-indexof');
         const btnArraySplice = document.querySelector('#array-splice');
         const btnArraySlice = document.querySelector('#array-slice');
+        const btnIndexOf = document.querySelector('#array-indexof');
         // const date = ["월", "화", "수", "목", "금", "토"];
         let str = '';
 
@@ -136,7 +138,7 @@
         }
         btnArrayUnshift.addEventListener('click', arrayUnshift);
 
-        //array indexof: 배열에서 특정 요소가 있는 위치를 찾기  
+        //array indexof: 배열에서 특정 요소가 있는 위치를 찾기, 일부값이 아닌 전체가 일치해야하며, 없으면 -1을 반환
         function arrayIndexof() {
             var indexofResult = arrayDefault.indexOf("목요일");
             str = '';
@@ -162,7 +164,7 @@
         btnArraySplice.addEventListener('click', arraysplice);
 
 
-        //array sㅣice: 기존 배열 요소를 시작~끝 범위 복사, 새로운 배열로. 
+        //array slice: 기존 배열 요소를 시작~끝 범위 복사, 새로운 배열로. 
         function arrayslice() {
             //2~4번째의 값을 변경 
             var sliceResult = [];
@@ -175,6 +177,10 @@
             //console.log(sliceResult)
         }
         btnArraySlice.addEventListener('click', arrayslice);
+
+
+
+
     </script>
 </body>
 

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>color picker 만들어보기 </title>
+    <meta charset="utf-8">
+    <script src="color.js"></script>
+    <style type="text/css">
+        #colorForm {
+            margin-bottom: 20px;
+        }
+
+        #selectColor {
+            display: inline-block;
+        }
+
+        .colorList {
+            display: flex;
+            align-items: center;
+            flex-wrap: wrap;
+            margin: 0;
+            padding: 0;
+            margin: -10px 0 0 -10px;
+        }
+
+        .colorList>li {
+            margin: 10px 0 0 10px;
+            list-style: none;
+            flex: 0 0 50px;
+            height: 50px;
+            border-radius: 100%;
+            border: 1px solid #d2d2d2;
+        }
+    </style>
+</head>
+
+<body>
+    <input id="colorForm" type="color">
+    <div id="selectColor"></div>
+    <button id="saveColor" type="button">현재 색 저장</button>
+    <button id="delColor" type="button">선택한 색 삭제</button>
+
+
+
+
+    <ul class="colorList"></ul>
+</body>
+
+</html>

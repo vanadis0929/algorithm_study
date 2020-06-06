@@ -13,6 +13,7 @@
     "scss-compile": "^0.1.7"
   },
   "dependencies": {
+    "global": "^4.4.0",
     "npm-check-updates": "^6.0.1"
   }
 }
