@@ -1,11 +1,11 @@
 window.addEventListener("DOMContentLoaded", function () {
-  getColor();
-
   const colorPicker = document.getElementById("colorForm");
   const selectColor = document.getElementById("selectColor");
   const colorList = document.querySelector(".colorList");
   var saveColorArray = [];
   let selectedColor;
+
+  getColor();
 
   colorPicker.addEventListener("change", function (e) {});
 
@@ -31,6 +31,13 @@ window.addEventListener("DOMContentLoaded", function () {
   function getColor() {
     if (localStorage.getItem("color") != null) {
       saveColorArray = JSON.parse(localStorage.getItem("color"));
+      console.log(saveColorArray);
+      for (i = 0; i < saveColorArray.length; i++) {
+        var str;
+        str += `<li style='background-color: ${saveColorArray[i]}'></li>`;
+        console.log();
+        colorList.innerHTML = str;
+      }
     }
   }
 
