@@ -11,11 +11,7 @@ window.addEventListener("DOMContentLoaded", function () {
 
   function addColor() {
     if (colorPicker.value) {
-      console.log(typeof saveColorArray);
       saveColorArray.push(colorPicker.value);
-
-      console.log(saveColorArray.length);
-
       localStorage.setItem("color", JSON.stringify(saveColorArray));
     }
   }
@@ -24,10 +20,12 @@ window.addEventListener("DOMContentLoaded", function () {
     getColor();
     console.log(saveColorArray);
 
-    colorList.innerHTML = `<li style="background-color: ${saveColorArray}"></li>`;
-    // for (i=0; i < saveColorArray.length; i++){
-
-    // }
+    for (i = 0; i < saveColorArray.length; i++) {
+      var str;
+      str += `<li style='background-color: ${saveColorArray[i]}'></li>`;
+      console.log(str);
+      colorList.innerHTML = str;
+    }
   }
 
   function getColor() {
